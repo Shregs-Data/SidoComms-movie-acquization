@@ -108,18 +108,16 @@ inner join Movies_aqz.dbo.country as cont
 ```
 ### Output
 *Kindly note that this is not the entire output. The entire output is long and would take up space.*
-|first_name|last_name|address|active|Rental rate|Replacement cost|
+|first_name|last_name|active|Store_address|City|country|
 | ------| -------| ---| ------| ----------- |-------|
-first_name	last_name			address	city	country
-JENNIFER	DAVIS	1795 Santiago de Compostela Way	1	1795 Santiago de Compostela Way	Laredo	United States
-DIANA	ALEXANDER	1308 Arecibo Way	1	1308 Arecibo Way	Augusta-Richmond County	United States
-ANNIE	RUSSELL	1599 Plock Drive	1	1599 Plock Drive	Tete	Mozambique
-LILLIAN	GRIFFIN	669 Firozabad Loop	1	669 Firozabad Loop	al-Ayn	United Arab Emirates
-EMILY	DIAZ	588 Vila Velha Manor	1	588 Vila Velha Manor	Kimchon	South Korea
-ROBIN	HAYES	1913 Kamakura Place	1	1913 Kamakura Place	Jelets	Russian Federation
-PEGGY	MYERS	733 Mandaluyong Place	1	733 Mandaluyong Place	Abha	Saudi Arabia
-CRYSTAL	FORD	659 Vaduz Drive	1	659 Vaduz Drive	Ashdod	Israel
-GLADYS	HAMILTON	1177 Jelets Way	1	1177 Jelets Way	Ilorin	Nigeria
+JENNIFER|DAVIS|	1|	1795 Santiago de Compostela Way|	Laredo|	United States
+DIANA|	ALEXANDER|	1|	1308 Arecibo Way|	Augusta-Richmond County|	United States|
+ANNIE|	RUSSELL|	1|	1599 Plock Drive|	Tete|	Mozambique|
+LILLIAN|	GRIFFIN|	1|	669 Firozabad Loop|	al-Ayn|	United Arab Emirates|
+EMILY|	DIAZ|	1|	588 Vila Velha Manor|	Kimchon|	South Korea|
+ROBIN|	HAYES|	1|	1913 Kamakura Place|	Jelets|	Russian Federation|
+PEGGY|	MYERS|	1|	733 Mandaluyong Place|	Abha|	Saudi Arabia|
+CRYSTAL|	FORD|	1|	659 Vaduz Drive|	Ashdod|	Israel|
 
 
 ## Question 6
