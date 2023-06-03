@@ -103,8 +103,7 @@ order by inv.store_id ,cate.category_id  desc
 ### Output
 *Kindly note that this is not the entire output. The entire output is long and would take up space.*
 |store_id|category_id|No_of_films|Avg_replacement_cost|Total_replacement_cost|
-| ------| -------| ---| -----|-------|
-				
+| ------| -------| ---| -----|-------|				
 1|	9|	153|	21.9899997711182|	3364.46996498108|
 1|	8|	157|	15.9899997711182|	2510.42996406555|
 1|	7|	162|	28.9899997711182|	4696.37996292114|
