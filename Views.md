@@ -69,9 +69,19 @@ group by a.store_id,b.rating
 ```
 ### Output
 *Kindly note that this is not the entire output. The entire output is long and would take up space.*
-|Inventory_id|Title|Store_id|Rating|Rental rate|Replacement cost|
-| ------| -------| ---| ------| ----------- |-------|
-
+|store_id|rating|total_merch|
+| ------| -------| ---| 
+store_id|	rating|	total_merch|
+1|	G|	394|
+2|	G|	397|
+1|	NC-17|	465
+2|	NC-17|	479
+1|	PG|	444
+2|	PG|	480
+1|	PG-13|	525
+2|	PG-13|	493
+1|	R|	442
+2|	R|	462
 ## Question 4
 Similarly, we want to understand how diversified the inventory is in terms of replacement cost. we want to see how big of a hit it would be if 
 a certain category of film became unpopular at a certain store. we would like to see the number of films, as well as the average replacement cost and the total replacement cost, sliced by store and film category
