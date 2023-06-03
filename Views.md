@@ -2,7 +2,7 @@
 My partner and i want to come by each of the stores in person to meet the managers. Please send over the managers' name of each store, with the full address of each property
 (street address, district,city and country please)
 
-### `code`
+#### `code`
 ```sql
 select a.address as Address,a.district as District, b.city as City, c.country as Country,    
 	s.first_name + ' ' + s.last_name AS Managers_name 
@@ -32,8 +32,7 @@ CROSS JOIN
 I would like to get a better understanding of all of the inventory that would come along with the business. Please pull together a list of each inventory item
 you have stocked, including the store_id number, inventory_id,name of the film, film rating, its rental rate and the replacement cost
 
-## `code`
-*Kindly note that this is not the entire output. The entire output is over 4581 and would take up space.*
+#### `code`
 ```sql
 select  inv.inventory_id,fil.title, inv.store_id, fil.rating, fil.rental_rate,fil.replacement_cost        
  from Movies_Aqz.dbo.film as fil
@@ -60,6 +59,7 @@ ADAPTATION HOLES|	12	|2|	NC-17|	2.99000000953674	|18.9899997711182
 ## Question 3
 From the same list of film you just pulled, please roll up that data up and provide a summary level overview of your inventory. we would like to know 
 howmany inventory items you have with each rating at each store
+#### `code`
 ```sql
  select a.store_id , b.rating , count(distinct a.inventory_id) as total_merch        
  from Movies_Aqz.dbo.inventory as a
@@ -85,6 +85,7 @@ group by a.store_id,b.rating
 ## Question 4
 Similarly, we want to understand how diversified the inventory is in terms of replacement cost. we want to see how big of a hit it would be if 
 a certain category of film became unpopular at a certain store. we would like to see the number of films, as well as the average replacement cost and the total replacement cost, sliced by store and film category
+#### `code`
 ```sql
 select inv.store_id , cate.category_id,         
 		count (film.title) as No_of_films ,  
@@ -121,6 +122,7 @@ order by inv.store_id ,cate.category_id  desc
 ## Question 5
 We want to make sure you folks have a good handle on who your customers are. Please provide a list of all customer names,
 which store they go to, whether or not they are currently active and their full addresses -- street address, city and country
+#### `code`
 ```sql
 select cut.first_name,cut.last_name,adre.address,cut.active,adre.address,city.city , cont.country 
 from Movies_aqz.dbo.customer as cut
@@ -148,6 +150,7 @@ CRYSTAL|	FORD|	1|	659 Vaduz Drive|	Ashdod|	Israel|
 ## Question 6
 We would like to understand how much your customers are spending with you and also know who your most valuable customers are. Please pull together a list of customers name, their total lifetime rentals, and the sum of payments you have collected from them. It would
 be great to see this ordered on total lifetime value, with the most valuable customers at the top of the list
+#### `code`
 ```sql
 select coh.first_name, coh.last_name,        
 		(select SUM(CONVERT(NUMERIC(10,2), amount)) as total_pmyt
@@ -176,6 +179,7 @@ MARCIA|	DEAN|	175.58|	42|
 ## Question 7
 My partner and i would like to get to know your board of advisors and any current investors. Could you plase provide a list of advisor and investors in one table?
 Could you please note whether they are an investor or an advisor, and for the investors, it would be good to include which company they work with.
+#### `code`
 ```sql
 Alter table Movies_Aqz.dbo.advisor
 add person_type varchar(100);
@@ -218,7 +222,7 @@ from Movies_Aqz.dbo.advisor
 ```
 ### Output
 |Name|Company_name|person_type|
- | ------| -------| ---| ------|
+ | ------| -------| ---| 
 Anthony Stark|	Iron Investors|	Investor
 Barry Beenthere|	No_company|	Advisor
 Cindy Smartypants|	No_company|	Advisor
@@ -231,6 +235,7 @@ William Wonka|	Chocolate Ventures|	Investor
 
 # Question 8
 We're interested in how well you have covered the most awarded actors. Of all the actors with three types of awards, for what % of them do we carry a film? And how about actors with two types of awards? Same Questions. Finally, How about actors with just one award? 
+#### `code`
 ```sql
 SELECT                                 
     awards_count,
