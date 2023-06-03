@@ -9,7 +9,7 @@ Leverage your SQL skills to extract and analyze data from various tables in the 
 Database to answer you potential Acquirer’s questions. Each question will require you to 
 write a multi-table SQL query, joining at least two tables.
 
-**The letter**
+# **The letter**
 
 Dear Sidocomms Movies Management,
 I am excited about the potential acquisition and learning more about your rental business.
