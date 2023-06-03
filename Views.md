@@ -41,6 +41,7 @@ select  inv.inventory_id,fil.title, inv.store_id, fil.rating, fil.rental_rate,fi
 		on fil.film_id = inv.film_id 
 ```
 ### Output
+*Kindly note that this is not the entire output. The entire output is long and would take up space.*
 |Inventory_id|Title|Store_id|Rating|Rental rate|Replacement cost|
 | ------| -------| ---| ------| ----------- |-------|
 ACADEMY DINOSAUR|	1|	1|	PG|	0.990000009536743	|20.9899997711182
@@ -67,6 +68,9 @@ howmany inventory items you have with each rating at each store
 group by a.store_id,b.rating  
 ```
 ### Output
+*Kindly note that this is not the entire output. The entire output is long and would take up space.*
+|Inventory_id|Title|Store_id|Rating|Rental rate|Replacement cost|
+| ------| -------| ---| ------| ----------- |-------|
 
 ## Question 4
 Similarly, we want to understand how diversified the inventory is in terms of replacement cost. we want to see how big of a hit it would be if 
@@ -86,7 +90,8 @@ group by cate.category_id , inv.store_id
 order by inv.store_id ,cate.category_id  desc
 ```
 ### Output
-
+*Kindly note that this is not the entire output. The entire output is long and would take up space.*
+|Inventory_id|Title|Store_id|Rating|Rental rate|Replacement cost|
 
 ## Question 5
 We want to make sure you folks have a good handle on who your customers are. Please provide a list of all customer names,
@@ -102,9 +107,22 @@ inner join Movies_aqz.dbo.country as cont
 		on cont.country_id = city.country_id 
 ```
 ### Output
+*Kindly note that this is not the entire output. The entire output is long and would take up space.*
+|first_name|last_name|address|active|Rental rate|Replacement cost|
+| ------| -------| ---| ------| ----------- |-------|
+first_name	last_name			address	city	country
+JENNIFER	DAVIS	1795 Santiago de Compostela Way	1	1795 Santiago de Compostela Way	Laredo	United States
+DIANA	ALEXANDER	1308 Arecibo Way	1	1308 Arecibo Way	Augusta-Richmond County	United States
+ANNIE	RUSSELL	1599 Plock Drive	1	1599 Plock Drive	Tete	Mozambique
+LILLIAN	GRIFFIN	669 Firozabad Loop	1	669 Firozabad Loop	al-Ayn	United Arab Emirates
+EMILY	DIAZ	588 Vila Velha Manor	1	588 Vila Velha Manor	Kimchon	South Korea
+ROBIN	HAYES	1913 Kamakura Place	1	1913 Kamakura Place	Jelets	Russian Federation
+PEGGY	MYERS	733 Mandaluyong Place	1	733 Mandaluyong Place	Abha	Saudi Arabia
+CRYSTAL	FORD	659 Vaduz Drive	1	659 Vaduz Drive	Ashdod	Israel
+GLADYS	HAMILTON	1177 Jelets Way	1	1177 Jelets Way	Ilorin	Nigeria
 
 
-##Question 6
+## Question 6
 We would like to understand how much your customers are spending with you and also know who your most valuable customers are. Please pull together a list of customers name, their total lifetime rentals, and the sum of payments you have collected from them. It would
 be great to see this ordered on total lifetime value, with the most valuable customers at the top of the list
 ```sql
@@ -119,9 +137,20 @@ from Movies_Aqz.dbo.customer as coh
 order by total_sum desc 
 ```
 ### Output
+*Kindly note that this is not the entire output. The entire output is long and would take up space.*
+|first_name|Last_name|total sum|total_rental|
+| ------| -------| ---| ------|
+KARL|	SEAL|	221.55|	45|
+ELEANOR|	HUNT|	216.54|	46|
+CLARA|	SHAW|	195.58|	42|
+RHONDA|	KENNEDY|	194.61|	39|
+MARION|	SNYDER|	194.61|	39|
+TOMMY|	COLLAZO|	186.62|	38|
+WESLEY|	BULL|	177.60|	40|
+TIM|	CARY|	175.61|	39|
+MARCIA|	DEAN|	175.58|	42|
 
-
-##Question 7
+## Question 7
 My partner and i would like to get to know your board of advisors and any current investors. Could you plase provide a list of advisor and investors in one table?
 Could you please note whether they are an investor or an advisor, and for the investors, it would be good to include which company they work with.
 ```sql
@@ -160,13 +189,24 @@ select first_name+' '+last_name ,
 		when advisor_id = 2 then 'No_company'	
 		when advisor_id = 3 then 'No_company'
 		when advisor_id = 4 then 'No_company'
-		else '' end as Company_n
+		else '' end as Company_name
 		,person_type
 from Movies_Aqz.dbo.advisor
 ```
 ### Output
+|Name|Company_name|person_type|
+ | ------| -------| ---| ------|
+Anthony Stark|	Iron Investors|	Investor
+Barry Beenthere|	No_company|	Advisor
+Cindy Smartypants|	No_company|	Advisor
+Mary Moneybags|	No_company|	Advisor
+Montgomery Burns|	Springfield Syndicators|	Investor
+Walter White|	No_company|	Advisor
+William Wonka|	Chocolate Ventures|	Investor
 
-#Question 8
+
+
+# Question 8
 We're interested in how well you have covered the most awarded actors. Of all the actors with three types of awards, for what % of them do we carry a film? And how about actors with two types of awards? Same Questions. Finally, How about actors with just one award? 
 ```sql
 SELECT                                 
@@ -192,9 +232,11 @@ GROUP BY
     awards_count;
  ```
 ### Output 
- 
- 
-
+|Awards_count|Total_actors|actors_with_film|percentage_with_films|
+ | ------| -------| ---| ------| 
+One Award|	71|70|	98.591549295774
+Three Awards|	5|	4|	80.000000000000
+Two Awards |62	|61|	98.387096774193
 
 
 
