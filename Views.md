@@ -71,9 +71,8 @@ group by a.store_id,b.rating
 *Kindly note that this is not the entire output. The entire output is long and would take up space.*
 |store_id|rating|total_merch|
 | ------| -------| ---| 
-store_id|	rating|	total_merch|
-1|	G|	394|
-2|	G|	397|
+1|	G|	394
+2|	G|	397
 1|	NC-17|	465
 2|	NC-17|	479
 1|	PG|	444
@@ -82,6 +81,7 @@ store_id|	rating|	total_merch|
 2|	PG-13|	493
 1|	R|	442
 2|	R|	462
+
 ## Question 4
 Similarly, we want to understand how diversified the inventory is in terms of replacement cost. we want to see how big of a hit it would be if 
 a certain category of film became unpopular at a certain store. we would like to see the number of films, as well as the average replacement cost and the total replacement cost, sliced by store and film category
@@ -101,7 +101,22 @@ order by inv.store_id ,cate.category_id  desc
 ```
 ### Output
 *Kindly note that this is not the entire output. The entire output is long and would take up space.*
-|Inventory_id|Title|Store_id|Rating|Rental rate|Replacement cost|
+|store_id|category_id|No_of_films|Avg_replacement_cost|Total_replacement_cost|
+| ------| -------| ---| -----|-------|
+				
+1|	9|	153|	21.9899997711182|	3364.46996498108|
+1|	8|	157|	15.9899997711182|	2510.42996406555|
+1|	7|	162|	28.9899997711182|	4696.37996292114|
+1|	6|	130|	17.9899997711182|	2338.69997024536|
+1|	5|	142|	22.9899997711182|	3264.57996749878|
+1|	4|	131|	26.9899997711182|	3535.68997001648|
+1|	3|	129|	18.9899997711182|	2449.70997047424|
+1|	2|	161|	12.9899997711182|	2091.38996315002|
+1|	16|	114|	23.9899997711182|	2734.85997390747|
+1|	15|	163|	10.9899997711182|	1791.36996269226|
+1|	14|	149|	23.9899997711182|	3574.50996589661|
+1|	13|	148|	21.9899997711182|	3254.51996612549|
+1|	12|	122|	22.9899997711182|	2804.77997207642|
 
 ## Question 5
 We want to make sure you folks have a good handle on who your customers are. Please provide a list of all customer names,
